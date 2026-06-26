@@ -23,7 +23,7 @@ export async function GET(
 
     return NextResponse.json({
       title: conversation.title || "Shared Chat",
-      messages: conversation.messages.map((m: any) => ({
+      conversation.messages.map((message: any) => (
         id: m.id,
         role: m.role,
         content: m.content
