@@ -21,14 +21,14 @@ export async function GET(
       return NextResponse.json({ error: "Conversation not found." }, { status: 404 });
     }
 
-    return NextResponse.json({
-      title: conversation.title || "Shared Chat",
-     conversation.messages.map((message: any) => (
-        id: m.id,
-        role: m.role,
-        content: m.content
-      }))
-    });
+  return NextResponse.json({
+  title: conversation.title || "Shared Chat",
+  messages: conversation.messages.map((m: any) => ({
+    id: m.id,
+    role: m.role,
+    content: m.content
+  }))
+});
   } catch (error: any) {
     console.error("Fetch shared chat error:", error);
     return NextResponse.json({ error: error.message || "Failed to fetch shared conversation." }, { status: 500 });
