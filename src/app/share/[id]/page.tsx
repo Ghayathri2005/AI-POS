@@ -94,7 +94,7 @@ export default async function SharePage({ params }: { params: Promise<{ id: stri
 
       {/* Messages Render Area */}
       <div className="flex-1 max-w-3xl mx-auto w-full py-12 px-4 space-y-12">
-        {conversation.messages.map((message) => (
+       {conversation.messages.map((message: any) => (
           <div key={message.id} className="flex gap-4 group">
             <Avatar className="h-8 w-8 rounded-lg shrink-0">
               {message.role === "user" ? (
